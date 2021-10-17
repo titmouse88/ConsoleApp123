@@ -1,0 +1,80 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ConsoleApp1/1.0.0": {
+        "dependencies": {
+          "Homework1": "1.0.0",
+          "Homework2": "1.0.0",
+          "Homework3": "1.0.0",
+          "Homework4": "1.0.0",
+          "Homework5": "1.0.0"
+        },
+        "runtime": {
+          "ConsoleApp1.dll": {}
+        }
+      },
+      "Homework1/1.0.0": {
+        "runtime": {
+          "Homework1.dll": {}
+        }
+      },
+      "Homework2/1.0.0": {
+        "runtime": {
+          "Homework2.dll": {}
+        }
+      },
+      "Homework3/1.0.0": {
+        "runtime": {
+          "Homework3.dll": {}
+        }
+      },
+      "Homework4/1.0.0": {
+        "runtime": {
+          "Homework4.dll": {}
+        }
+      },
+      "Homework5/1.0.0": {
+        "runtime": {
+          "Homework5.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleApp1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Homework1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Homework2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Homework3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Homework4/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Homework5/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

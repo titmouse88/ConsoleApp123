@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\ветка с методами\Homework3\bin\Debug\net5.0\Homework3.deps.json
+C:\Users\User\Desktop\ветка с методами\Homework3\bin\Debug\net5.0\Homework3.dll
+C:\Users\User\Desktop\ветка с методами\Homework3\bin\Debug\net5.0\ref\Homework3.dll
+C:\Users\User\Desktop\ветка с методами\Homework3\bin\Debug\net5.0\Homework3.pdb
+C:\Users\User\Desktop\ветка с методами\Homework3\obj\Debug\net5.0\Homework3.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ветка с методами\Homework3\obj\Debug\net5.0\Homework3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\ветка с методами\Homework3\obj\Debug\net5.0\Homework3.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\ветка с методами\Homework3\obj\Debug\net5.0\Homework3.AssemblyInfo.cs
+C:\Users\User\Desktop\ветка с методами\Homework3\obj\Debug\net5.0\Homework3.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ветка с методами\Homework3\obj\Debug\net5.0\Homework3.dll
+C:\Users\User\Desktop\ветка с методами\Homework3\obj\Debug\net5.0\ref\Homework3.dll
+C:\Users\User\Desktop\ветка с методами\Homework3\obj\Debug\net5.0\Homework3.pdb
