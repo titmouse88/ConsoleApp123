@@ -23,9 +23,14 @@ namespace Homework1
             return number;
         }
 
-        private double CalkFormula(int operand1, int operand2)
+        public double CalkFormula(int operand1, int operand2)
         {
-            double resalt = (operand1 * 5 + operand2 * operand2) / (operand2 - operand1);
+           if (operand1==operand2)
+            {
+                throw new ArgumentException("Значения чисел должны быть разными");
+            }
+            
+            double resalt = (operand1 * 5 + operand2 * operand2*1.0) / (operand2 - operand1);
             return resalt;
         }
 
@@ -45,7 +50,7 @@ namespace Homework1
             return Console.ReadLine();
         }
 
-        private void SwapStrings(ref string word1, ref string word2)
+        public void SwapStrings(ref string word1, ref string word2)
         {
             string tmp = word1;
             word1 = word2;
@@ -55,45 +60,56 @@ namespace Homework1
 
 
 
-        public void SolveTask3()
+        public void SolveTask3() //Пользователь вводит 2 числа (A и B). Выведите в консоль результат деления A на B и остаток от деления.
+
         {
             int operand1 = GetNumberOfUser("Введите число А");
             int operand2 = GetNumberOfUser("Введите число B");
-            int result1 = CalkFormula3(operand1, operand2);
+            int result1 = DivisionResult(operand1, operand2);
             Console.WriteLine($"целая часть: {result1}");
-            double result2 = CalkFormula4(operand1, operand2);
+            double result2 = RemainderOfTheDivision(operand1, operand2);
             Console.WriteLine($"остаток от деления: {result2}");
         }
 
-        
 
-        private int CalkFormula3(int operand1, int operand2)
+
+        public int DivisionResult(int operand1, int operand2)
         {
+            if (operand2==0)
+            {
+                throw new ArgumentException("Деление на 0!");
+            }
             int result1 = (operand1) / (operand2);
             return result1;
         }
 
-        private double CalkFormula4(int operand1, int operand2)
+        public double RemainderOfTheDivision(int operand1, int operand2)
         {
-            double result2 = (operand1) % (operand2);
+            double result2 = (operand1) % (operand2)*1.0;
             return result2;
         }
 
-        public void SolveTask4()
+        public void SolveTask4() //Пользователь вводит 3 не равных 0 числа (A, B и С). Выведите в консоль решение(значение X) линейного уравнения стандартного вида, где A*X+B=C.
+
         {
             int operand1 = GetNumberOfUser("Введите число А");
             int operand2 = GetNumberOfUser("Введите число B");
             int operand3 = GetNumberOfUser("Введите число С");
-            double result = CalkFormula4(operand1, operand2, operand3);
+            double result = LinearEquation(operand1, operand2, operand3);
             Console.WriteLine($"результат четвертой задачи {result}");
             
         }
 
-       
 
-        private double CalkFormula4(int operand1, int operand2, int operand3)
+
+        public double LinearEquation(int operand1, int operand2, int operand3)
         {
-            double result = (operand3 - operand2) / operand1;
+            if (operand1 == 0)
+            {
+                throw new ArgumentException("Деление на 0!");
+            }
+
+            double result = (operand3 - operand2)*1.0 / operand1;
             return result;
         }
 
@@ -103,30 +119,37 @@ namespace Homework1
             int coordX2 = GetNumberOfUser("введите координату Х2");
             int coordY1 = GetNumberOfUser("введите координату Y1");
             int coordY2 = GetNumberOfUser("введите координату Y2");
-            int calculationResult1 = CalkFormula5(coordX1, coordX2, coordY1, coordY2);
-            int calculationResult2 = CalkFormula6(coordX1, coordX2, coordY1, coordY2);
-            Console.WriteLine($"y= {calculationResult1} *x + {calculationResult2}");
+            int resultX = EquationStraightLineArgX(coordX1, coordX2, coordY1, coordY2);
+            int result = EquationStraightLineArgY(coordX1, coordX2, coordY1, coordY2);
+            Console.WriteLine($"y= {resultX} *x + {result}");
 
         }
 
-        
 
-        private int CalkFormula5(int coordX1, int coordX2, int coordY1, int coordY2)
+
+        public int EquationStraightLineArgX(int coordX1, int coordX2, int coordY1, int coordY2) 
+            //Пользователь вводит 4 числа (X1, Y1, X2, Y2), описывающие координаты 2-х точек на координатной плоскости.
+            //Выведите уравнение прямой в формате Y=AX+B, проходящей через эти точки
         {
-            int calculationResult1 = (coordY2 - coordY1) / (coordX2 - coordX1);
+            if (coordX2 == coordX1)
+            {
+                throw new ArgumentException("Деление на 0!");
+            }
+
+            int resultX = (coordY2 - coordY1) / (coordX2 - coordX1);
             
             
-            return calculationResult1;
+            return resultX;
            
         }
 
-        private int CalkFormula6(int coordX1, int coordX2, int coordY1, int coordY2)
+        public int EquationStraightLineArgY(int coordX1, int coordX2, int coordY1, int coordY2)
         {
             
             int calcu = (coordY2 - coordY1) / (coordX2 - coordX1);
-            int calculationResult2 = (coordY1 - calcu * coordX1);
+            int result = (coordY1 - calcu * coordX1);
             
-            return calculationResult2;
+            return result;
         }
 
         
