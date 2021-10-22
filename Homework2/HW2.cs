@@ -4,11 +4,12 @@ namespace Homework2
 {
     public class HW2
     {
-        public void SolveTask1()//1
+        public void SolveTask1()//Пользователь вводит 2 числа (A и B). Если A>B, подсчитать A+B, если A=B, подсчитать A*B, если A<B, подсчитать A-B.
+
         {
             int operand1 = GetNumberOfUser("Введите число А");
             int operand2 = GetNumberOfUser("Введите число B");
-            int result = CalkFormula(operand1, operand2);
+            int result = CalkFormulaThreeIf(operand1, operand2);
             Console.WriteLine($"Результат первой задачи; {result}");
         }
 
@@ -19,7 +20,7 @@ namespace Homework2
             return number;
         }
 
-        private int CalkFormula(int operand1, int operand2)
+        public int CalkFormulaThreeIf(int operand1, int operand2)
         {
             int result = 1;
             if (operand1 > operand2)
@@ -40,34 +41,67 @@ namespace Homework2
         }
 
 
-        public void SolveTask2()//2
+        public void SolveTask2()//2Пользователь вводит 2 числа (X и Y). Определить какой четверти принадлежит точка с координатами (X,Y).
+
         {
             int operandX = GetNumberOfUser("введите координату Х");
             int operandY = GetNumberOfUser("введите координату Y");
-            string result = CalkFormula3(operandX, operandY);
+            int result1= QuarterPoint(operandX, operandY);
+            string result = CalkFormula4(result1);
             Console.WriteLine($"Результат второй задачи; {result}");
         }
 
-        
 
-        private string CalkFormula3(int operandX, int operandY)
+
+        public int QuarterPoint(int operandX, int operandY)
         {
-            string result = " ";
+            int result1=1 ;
+            if (operandX == 0 || operandY== 0)
+            {
+                throw new ArgumentException("точка лежит на оси");
+            }
             if ((operandX > 0) && (operandY > 0))
             {
-                result = "первая четверть";
+                result1 = 1;
             }
             else if ((operandX > 0) && (operandY < 0))
             {
-                result = "четвертая четверть";
+                result1 = 4;
             }
             else if ((operandX < 0) && (operandY < 0))
+
+            {
+                result1 = 3;
+            }
+
+            else if ((operandX < 0) && (operandY > 0))
+
+            {
+                result1 = 2;
+            }
+
+            return result1;
+        }
+
+        public string CalkFormula4( int result1)
+        {
+            
+            string result = " ";
+            if (result1==1)
+            {
+                result = "первая четверть";
+            }
+            else if (result1 == 4)
+            {
+                result = "четвертая четверть";
+            }
+            else if ((result1 == 3))
 
             {
                 result = "третья четверть";
             }
 
-            else if ((operandX < 0) && (operandY > 0))
+            else if ((result1 == 4))
 
             {
                 result = "вторая четверть";
@@ -78,7 +112,8 @@ namespace Homework2
 
 
 
-        public void SolveTask3()//3
+        public void SolveTask3()//3Пользователь вводит 3 числа (A, B и С). Выведите их в консоль в порядке возрастания.
+
         {
             int operandA = GetNumberOfUser("Введите число А");
             int operandB = GetNumberOfUser("Введите число B");
@@ -135,7 +170,8 @@ namespace Homework2
             }
         }
 
-        public void SolveTask4() //4
+        public void SolveTask4() //4Пользователь вводит 3 числа (A, B и С).
+                                 //Выведите в консоль решение(значения X) квадратного уравнения стандартного вида, где AX2+BX+C=0.
 
         {
 
@@ -232,6 +268,11 @@ namespace Homework2
             {
 
             string answer = "";
+            if (peremenA < 10)
+            {
+                throw new ArgumentException("Введите двузначное число!");
+            }
+
             int result = peremenA % 10;
             int result2 = peremenA / 10;
 
@@ -240,34 +281,34 @@ namespace Homework2
                 switch (result)
                 {
                     case 0:
-                        Console.WriteLine("Десять");
+                        answer = "Десять";
                         break;
                     case 1:
-                        Console.WriteLine("Одиннадцать");
+                        answer = "Одиннадцать";
                         break;
                     case 2:
-                        Console.WriteLine("Двенадцать");
+                        answer = "Двенадцать";
                         break;
                     case 3:
-                        Console.WriteLine("Тринадцать");
+                        answer = "Тринадцать";
                         break;
                     case 4:
-                        Console.WriteLine("Четырнадцать");
+                        answer = "Четырнадцать";
                         break;
                     case 5:
-                        Console.WriteLine("Пятнадцать");
+                        answer = "Пятнадцать";
                         break;
                     case 6:
-                        Console.WriteLine("Шестнадцать");
+                        answer = "Шестнадцать";
                         break;
                     case 7:
-                        Console.WriteLine("Семнадцать");
+                        answer = "Семнадцать";
                         break;
                     case 8:
-                        Console.WriteLine("Восемнадцать");
+                        answer = "Восемнадцать";
                         break;
                     case 9:
-                        Console.WriteLine("Девятнадцать");
+                        answer = "Девятнадцать";
                         break;
                     default:
                         break;

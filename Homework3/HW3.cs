@@ -31,31 +31,39 @@ namespace Homework3
 
         
 
-        public void SolveTask2()//Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
-        {
-            int peremenA = GetNumberOfUser("Введите число А");
-            Console.WriteLine("Результат первой задачи; ");
-            
-             CalkFormula(peremenA);
-        }
+        //public void SolveTask2()//Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
+        //{
+        //    int peremenA = GetNumberOfUser("Введите число А");
+        //    int result ;
+        //      CalkFormulaLOL(peremenA);
+        //    string result2 = CalkFormulaDivisionIntoOneself(result);
+        //    Console.WriteLine($"  {result2}");
+        //}
 
         
-        private int CalkFormula(int peremenA)
+        //private void CalkFormulaLOL(int peremenA)
+        //{
+        //    int result =1 ;
+        //    for (int i = peremenA; i < 1001; i++)
+        //    {
+        //        int i1= i % peremenA;
+
+        //        if (i1 == 0)
+        //        {
+        //            result= i;
+        //        }
+
+        //    }    
+
+            
+
+        //}
+
+        public string CalkFormulaDivisionIntoOneself(int result)
         {
-            int result =1 ;
-            for (int i = peremenA; i < 1001; i++)
-            {
-                int i1= i % peremenA;
-
-                if (i1 == 0)
-                {
-                    Console.WriteLine(i);
-                }
-
-            }    
-
-            return result;
-
+           
+            string result2 = $"все числа от 1 до 1000, которые делятся на A  {result}";
+            return result2;
         }
 
 
