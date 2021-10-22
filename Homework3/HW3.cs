@@ -11,7 +11,7 @@ namespace Homework3
         {
             int peremenA = GetNumberOfUser("Введите число ");
             int peremenB = GetNumberOfUser("Введите степень, в которую необходимо возвести число");
-            double result1 = CalkFormula3(peremenA, peremenB);
+            double result1 = ExponentiationNomber(peremenA, peremenB);
             Console.WriteLine($"число {peremenA} в степени {peremenB} будет {result1}");
             
         }
@@ -23,64 +23,60 @@ namespace Homework3
             return number;
         }
 
-        private double CalkFormula3(int peremenA, int peremenB)
+        public double ExponentiationNomber(int peremenA, int peremenB)
         {
             double result1 = Math.Pow(peremenA, peremenB);
             return result1;
         }
 
-        
 
-        //public void SolveTask2()//Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
-        //{
-        //    int peremenA = GetNumberOfUser("Введите число А");
-        //    int result ;
-        //      CalkFormulaLOL(peremenA);
-        //    string result2 = CalkFormulaDivisionIntoOneself(result);
-        //    Console.WriteLine($"  {result2}");
-        //}
 
-        
-        //private void CalkFormulaLOL(int peremenA)
-        //{
-        //    int result =1 ;
-        //    for (int i = peremenA; i < 1001; i++)
-        //    {
-        //        int i1= i % peremenA;
-
-        //        if (i1 == 0)
-        //        {
-        //            result= i;
-        //        }
-
-        //    }    
-
-            
-
-        //}
-
-        public string CalkFormulaDivisionIntoOneself(int result)
+        public void SolveTask2()//Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
         {
-           
-            string result2 = $"все числа от 1 до 1000, которые делятся на A  {result}";
-            return result2;
+            int peremenA = GetNumberOfUser("Введите число А");
+            
+            string result= CalkFormulaDivisionIntoOneself(peremenA);
+            
+            Console.WriteLine($" все числа от 1 до 1000, которые делятся на A   {result}");
         }
+
+
+        public string CalkFormulaDivisionIntoOneself(int peremenA)
+        {
+            string result = "";
+            for (int i = peremenA; i < 1001; i++)
+            {
+                int i1 = i % peremenA;
+
+                if (i1 == 0)
+                {
+                    result +=  i +" ";
+                }
+
+            }
+            return result;
+
+
+
+        }
+
+        
 
 
 
         public void SolveTask3()// Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, квадрат которых меньше A.
         {
             int peremenA = GetNumberOfUser("Введите число А");
-            Console.WriteLine("количество положительных целых чисел, квадрат которых меньше A ");
 
-            CalkFormula3(peremenA);
+           string result= PositiveInteger(peremenA);
+            Console.WriteLine($"количество положительных целых чисел, квадрат которых меньше A {result}");
         }
 
-       
 
-        private int CalkFormula3(int peremenA)
+
+        public string PositiveInteger(int peremenA)
         {
-            int result = 1;
+            string result = "";
             int i2 = 0;
             for (int i = 0; i < peremenA; i++)
             {
@@ -92,11 +88,12 @@ namespace Homework3
                 {
 
                     i2++;
+                    result = $"{i2}";
 
                 }
 
             }
-            Console.WriteLine(i2);
+            
 
             return result;
 
@@ -106,16 +103,16 @@ namespace Homework3
         public void SolveTask4()// Пользователь вводит 1 число (A). Вывести наибольший делитель (кроме самого A) числа A.
         {
             int peremenA = GetNumberOfUser("Введите число А");
-            Console.WriteLine("наибольший делитель (кроме самого A) числа A ");
 
-            CalkFormula4(peremenA);
+            string result = GreatestDivisor(peremenA);
+            Console.WriteLine($"наибольший делитель (кроме самого A) числа A {result} ");
         }
 
-       
 
-        private int CalkFormula4(int peremenA)
+
+        public string GreatestDivisor(int peremenA)
         {
-            int result = 1;
+            string result = "";
             int i2 = 0;
             int i;
             for (i = 1; i < peremenA; i++)
@@ -130,7 +127,7 @@ namespace Homework3
                 }
 
             }
-            Console.WriteLine(i2);
+            result = $"{i2}";
 
             return result;
 
@@ -145,16 +142,16 @@ namespace Homework3
             int peremenA = GetNumberOfUser("Введите число А");
             int peremenB = GetNumberOfUser("Введите число B");
 
-            Console.WriteLine("сумма всех чисел из диапазона от A до B, которые делятся без остатка на 7 ");
 
-            CalkFormula5(peremenA, peremenB);
+            string result= GetSumOfNomberOfDevisor7(peremenA, peremenB);
+            Console.WriteLine($"сумма всех чисел из диапазона от A до B, которые делятся без остатка на 7 {result}");
         }
 
-        
 
-        private int CalkFormula5(int peremenA, int peremenB)
+
+        public string GetSumOfNomberOfDevisor7(int peremenA, int peremenB)
         {
-            int result = 1;
+            string result = "";
             int sum = 0;
             if (peremenA < peremenB)
             {
@@ -173,7 +170,7 @@ namespace Homework3
                         sum += i;
                 }
             }
-            Console.WriteLine(sum);
+            result= $"{sum}";
 
             return result;
         }
@@ -184,16 +181,17 @@ namespace Homework3
         public void SolveTask6()
         {
             int peremenA = GetNumberOfUser("Введите числоряда фибаначи");
-            Console.WriteLine("это число:");
 
-            CalkFormula6(peremenA);
+           int result= FibonacciNumber(peremenA);
+            Console.WriteLine($"это число:{result}");
         }
 
        
 
-        private int CalkFormula6(int peremenA)
+        private int FibonacciNumber(int peremenA)
         {
-            int result = 1;
+            int result;
+            
             int first = 1;
             int second = 1;
             int sum;
@@ -207,31 +205,31 @@ namespace Homework3
 
                 if (i2 == peremenA)
                 {
-                    Console.WriteLine(sum);
+                    result = sum;
+                    break;
                 }
             }
-                return result;
+            
+            return result;
 
         }
 
         
 
         public void SolveTask7()
-        //Пользователь вводит 2 числа (A и B).
-        //Вывести сумму всех чисел из диапазона от A до B,
-        //которые делятся без остатка на 7. (Учтите, что при вводе B может оказаться меньше A).
+        //наибольший делитель по евклиду
         {
             int peremenA = GetNumberOfUser("Введите число А");
             int peremenB = GetNumberOfUser("Введите число B");
 
-            Console.WriteLine("наибольший общий делитель ");
 
-            CalkFormula7(peremenA, peremenB);
+            int result= DivisionWithoutRemainderBy7(peremenA, peremenB);
+            Console.WriteLine($"наибольший общий делитель {result}") ; 
         }
 
         
 
-        private int CalkFormula7(int peremenA, int peremenB)
+        private int DivisionWithoutRemainderBy7(int peremenA, int peremenB)
         {
             int result = 1;
             while (peremenA * peremenB != 0)
@@ -244,7 +242,7 @@ namespace Homework3
                 else
                     peremenB = peremenB % peremenA;
             }
-            Console.WriteLine(peremenB + peremenA);
+            result=peremenB + peremenA;
 
             return result;
         }
@@ -291,13 +289,13 @@ namespace Homework3
         public void SolveTask9()// Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
         {
             int num = GetNumberOfUser("Введите число А");
-            string result = CalkFormula9(num);
+            string result = TheNumberOfOddDigitsOfANumber(num);
             Console.WriteLine($" {result}");
         }
 
        
 
-        private string CalkFormula9(int num)
+        private string TheNumberOfOddDigitsOfANumber(int num)
         {
             string result;
             int NomberOfOdd = 0;
@@ -331,20 +329,20 @@ namespace Homework3
 
         }
 
-        public void SolveTask10()// Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа,
-        {
-            int peremenA = GetNumberOfUser("Введите число А");
-            Console.WriteLine("зеркальное отображение числа А");
-            NomberReverse(peremenA);
-        }
+        //public void SolveTask10()// Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа,
+        //{
+        //    int peremenA = GetNumberOfUser("Введите число А");
+        //    Console.WriteLine("зеркальное отображение числа А");
+        //    NomberReverse(peremenA);
+        //}
 
-        private void NomberReverse(int peremenA)
-        {
-            Console.Write(peremenA % 10);
+        //public int NomberReverse(int peremenA)
+        //{
+        //    Console.Write(peremenA % 10);
 
-            while ((peremenA /= 10) != 0)
-                Console.Write(peremenA % 10);
-        }
+        //    while ((peremenA /= 10) != 0)
+        //        Console.Write(peremenA % 10);
+        //}
 
 
 

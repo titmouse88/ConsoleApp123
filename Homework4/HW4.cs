@@ -166,11 +166,15 @@ namespace Homework4
             int[] array = new int[arrayLenght];
             array = RandomizeArray(array);
             ShowArray(array);
+             ReverseArray(ref array);
             Console.WriteLine("\n реверс массива ");
-             ReverseArray(array);
+            foreach (var item in array)
+            {
+                Console.Write(item +"\t");
+            }
         }
 
-        void ReverseArray(int[] array)
+        public void ReverseArray(ref int[] array)
         {
             
 
@@ -182,11 +186,7 @@ namespace Homework4
                 array[array.Length - 1 - i] = tmp;
             }
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write($" {array[i]}\t");
-
-            }
+            
 
 
         }
@@ -258,7 +258,7 @@ namespace Homework4
             Console.WriteLine("\n сортировка массива по возрастанию пузырьком ");
             BubleSortArray(array);
         }
-        void BubleSortArray(int[] array)
+        public int[] BubleSortArray(int[] array)
         {
 
             Boolean needSort = true;
@@ -278,12 +278,7 @@ namespace Homework4
                     }
                 }
             }
-            for (int k = 0; k < array.Length; k += 1)
-            {
-                Console.Write(" {0}", array[k]);
-
-            }
-
+            return array;
 
         }
 
