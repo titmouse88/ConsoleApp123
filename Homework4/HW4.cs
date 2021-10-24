@@ -152,7 +152,7 @@ namespace Homework4
 
                 if (index % 2 != 0)
                 {
-                    sum=array[index]++;
+                    sum+=array[index]++;
 
                 }
             }
@@ -166,7 +166,7 @@ namespace Homework4
             int[] array = new int[arrayLenght];
             array = RandomizeArray(array);
             ShowArray(array);
-             ReverseArray(ref array);
+             ReverseArray( array);
             Console.WriteLine("\n реверс массива ");
             foreach (var item in array)
             {
@@ -174,7 +174,7 @@ namespace Homework4
             }
         }
 
-        public void ReverseArray(ref int[] array)
+        public void ReverseArray( int[] array)
         {
             
 
@@ -226,9 +226,13 @@ namespace Homework4
             ShowArray(array);
             Console.WriteLine("\n замена второй половины массива первой ");
             ChangeHalfArray(array);
+            foreach (var item in array)
+            {
+                Console.Write(item + "\t");
+            }
         }
 
-        void ChangeHalfArray(int[] array)
+        public void ChangeHalfArray(int[] array)
         {
 
             int half = array.Length / 2;
@@ -241,12 +245,7 @@ namespace Homework4
 
             }
 
-            for (int index = 0; index < array.Length; index++)
-            {
-
-                Console.Write(array[index] + " ");
-            }
-
+            
         }
         public void SolveTask9() // //Отсортировать массив по возрастанию одним из способов:  пузырьком(Bubble), выбором (Select) или вставками (Insert)) 
                                  //пузырьком(Bubble)
@@ -257,6 +256,10 @@ namespace Homework4
             ShowArray(array);
             Console.WriteLine("\n сортировка массива по возрастанию пузырьком ");
             BubleSortArray(array);
+            foreach (var item in array)
+            {
+                Console.Write(item + "\t");
+            }
         }
         public int[] BubleSortArray(int[] array)
         {
@@ -291,8 +294,12 @@ namespace Homework4
             ShowArray(array);
             Console.WriteLine("\n сортировка массива по убыванию выборкой ");
             ChoiceSortArray(array);
+            foreach (var item in array)
+            {
+                Console.Write(item + "\t");
+            }
         }
-        void ChoiceSortArray(int[] array)
+        public void ChoiceSortArray(int[] array)
         {
             int indMax;
             int temp;
@@ -316,11 +323,7 @@ namespace Homework4
 
 
             }
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i] + " ");
-
-            }
+            
          }
 
     }

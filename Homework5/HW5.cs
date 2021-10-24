@@ -111,14 +111,14 @@ namespace Homework5
             int[,] array = new int[arrayLenghtM, arrayLenghtN];
             array = RandomizeArray(array);
             PrintMatrix(array);
-            string min = SearchMinIndexInMatrix(array);
-            Console.WriteLine($"\n максимальный элемент массива: {min}");
+            int [] min = SearchMinIndexInMatrix(array);
+            Console.WriteLine($"\n минимальный элемент массива: {min[0]}, {min[1]}");
         }
 
-        public string SearchMinIndexInMatrix(int[,] array)
+        public int[] SearchMinIndexInMatrix(int[,] array)
         {
             int min = array[0, 0];
-            string index = "";
+            int[] index = new int[2];
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -126,7 +126,8 @@ namespace Homework5
                     if (array[i, j] < min)
                     {
                         min = array[i, j];
-                        index= $"{i},{j}";
+                        index[0] = i;
+                        index[1] = j;
                     }
                 }
 
@@ -145,14 +146,14 @@ namespace Homework5
             int[,] array = new int[arrayLenghtM, arrayLenghtN];
             array = RandomizeArray(array);
             PrintMatrix(array);
-            string max = SearchMaxIndexInMatrix(array);
-            Console.WriteLine($"\n максимальный элемент массива: {max}");
+            int[]  max = SearchMaxIndexInMatrix(array);
+            Console.WriteLine($"\n максимальный элемент массива: {max[0]}, {max[1]}");
         }
 
-        public string SearchMaxIndexInMatrix(int[,] array)
+        public int[] SearchMaxIndexInMatrix(int[,] array)
         {
             int max = array[0, 0];
-            string index = "";
+            int[] index = new int[2];
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -160,13 +161,11 @@ namespace Homework5
                     if (array[i, j] > max)
                     {
                         max = array[i, j];
-                        index = $"{i},{j}";
+                        index[0] = i;
+                        index[1] = j;
                     }
                 }
-
-
             }
-
             return index;
         }
 
@@ -200,7 +199,7 @@ namespace Homework5
                 }
 
             }
-            Console.WriteLine($"max:{count}");
+            
 
             return count;
         }

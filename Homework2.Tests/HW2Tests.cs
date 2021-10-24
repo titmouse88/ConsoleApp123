@@ -122,5 +122,25 @@ namespace Homework2.Tests
 
         }
 
+        //SortArrayThreeNumbersByDescing(int[] myArray)
+        [TestCase(new int[] { 1, 5, 2 }, new int[] { 5, 2, 1 })]
+        [TestCase(new int[] {2,5,7,1 }, new int[] {7, 5, 2, 1 })]
+        [TestCase(new int[] { 0,4,2}, new int[] { 4, 2, 0})]
+        
+        public void SortArrayThreeNumbersByDescingTests(int[] myArray, int[]  expected)
+        {
+            //arrange
+            //act
+           _hw2.SortArrayThreeNumbersByDescing( myArray);
+
+
+
+            //assert
+
+            Assert.AreEqual(expected, myArray);
+
+            Assert.Pass();
+        }
+
     }
 }

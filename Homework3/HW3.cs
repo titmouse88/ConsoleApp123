@@ -186,9 +186,9 @@ namespace Homework3
             Console.WriteLine($"это число:{result}");
         }
 
-       
 
-        private int FibonacciNumber(int peremenA)
+
+        public int FibonacciNumber(int peremenA)
         {
             int result;
             
@@ -227,9 +227,9 @@ namespace Homework3
             Console.WriteLine($"наибольший общий делитель {result}") ; 
         }
 
-        
 
-        private int DivisionWithoutRemainderBy7(int peremenA, int peremenB)
+
+        public int DivisionWithoutRemainderBy7(int peremenA, int peremenB)
         {
             int result = 1;
             while (peremenA * peremenB != 0)
@@ -293,9 +293,9 @@ namespace Homework3
             Console.WriteLine($" {result}");
         }
 
-       
 
-        private string TheNumberOfOddDigitsOfANumber(int num)
+
+        public string TheNumberOfOddDigitsOfANumber(int num)
         {
             string result;
             int NomberOfOdd = 0;
@@ -329,43 +329,54 @@ namespace Homework3
 
         }
 
-        //public void SolveTask10()// Пользователь вводит 1 число. Найти число, которое является зеркальным отображением последовательности цифр заданного числа,
-        //{
-        //    int peremenA = GetNumberOfUser("Введите число А");
-        //    Console.WriteLine("зеркальное отображение числа А");
-        //    NomberReverse(peremenA);
-        //}
+        public void SolveTask10()// Пользователь вводит 1 число.
+                                 // Найти число, которое является зеркальным отображением
+                                 // последовательности цифр заданного числа,
+         {
+            int a = GetNumberOfUser("Введите число");
+        int result = PrintTheMirroredNumber(a);
 
-        //public int NomberReverse(int peremenA)
-        //{
-        //    Console.Write(peremenA % 10);
-
-        //    while ((peremenA /= 10) != 0)
-        //        Console.Write(peremenA % 10);
-        //}
-
-
-
-        public void SolveTask11()// Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
-        {
-            int peremenA = GetNumberOfUser("Введите число А");
-            string result = CalkFormula11(peremenA);
-            Console.WriteLine($" {result}");
+        Console.WriteLine($"число, которое является зеркальным отображением последовательности цифр заданного числа {result}");
         }
 
-        
+    public int PrintTheMirroredNumber(int a)
+    {
 
-        private string CalkFormula11(int peremenA)
+        int result = 0;
+        while (a != 0)
         {
-          string result;
+
+            int c = a % 10;
+            result = result * 10 + c;
+            a /= 10;
+        }
+        return result;
+
+
+    }
+
+
+
+    public void SolveTask11()// Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
+        {
+            int peremenA = GetNumberOfUser("Введите число А");
+            string result = OddNumbersInTheInputNumber(peremenA);
+            Console.WriteLine($"результат: {result}");
+        }
+
+
+
+        public string OddNumbersInTheInputNumber(int peremenA)
+        {
+          string result="";
             uint pop = 1;
             uint evencount = 0;
             uint oddcount = 0;
             uint evensum = 0;
             uint oddsum = 0;
             int kolNeChetnih = 0;
-            Console.WriteLine("результат");
-
+           
+            
             while (pop <= peremenA)
             {
                 pop++;
@@ -385,14 +396,18 @@ namespace Homework3
             {
                 for (int i = peremenA; i != 0; i--)
                 {
-                    if (i % 2 == 0)
+                    if (i % 2 != 0)
                     {
-                        Console.WriteLine(i);
+
+
+                        result += i + " ";
 
                     }
                         
                 }
+                return result;
             }
+
             else
             {
                 result = "вот незадача- кажется сумма нечетных победила";
@@ -400,61 +415,40 @@ namespace Homework3
                 return result;
                 
             }
-            return " ";
+            
 
 
          }
 
         public void SolveTask12() //Пользователь вводит 2 числа. Сообщите, есть ли в написании двух чисел одинаковые цифры.
         {
-            int numberA = GetNumberOfUser("Введите число А");
-            int chisloB = GetNumberOfUser("Введите число B");
-            string result = CalkFormula12(numberA, chisloB);
-            Console.WriteLine($" {result}");
+
+            int a = GetNumberOfUser("Введите число а");
+            int b = GetNumberOfUser("Введите число b");
+            string result = FindTheSameNumbers(a, b);
+            Console.WriteLine($"есть ли в написании двух чисел одинаковые цифры - {result}");
+
         }
-        private string CalkFormula12(int numberA, int chisloB)
+
+        public string FindTheSameNumbers(int a, int b)
         {
-                int x = numberA;
-                string result = " ";
 
-                while (chisloB != 0)
-
+            while (a > 0)
+            {
+                while (b > 0)
                 {
-
-                    while (numberA != 0)
-
+                    if (a % 10 == b % 10)
                     {
 
-                        if (numberA % 10 == chisloB % 10)
-
-                        {
-
-                            result = "Да";
-
-                            break;
-
-                        }
-
-                        numberA /= 10;
-
+                        return "Да";
                     }
-
-                    chisloB /= 10;
-
-                    numberA = x;
-
+                    b /= 10;
                 }
-
-                if (result == "")
-
-                {
-
-                    result = "Нет";
-
-                  }
-              
-                 return result;
-          }
+                a /= 10;
+            }
+            return "Нет";
+        
+    }
         
 
 

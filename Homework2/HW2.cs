@@ -142,7 +142,7 @@ namespace Homework2
 
             Console.WriteLine();
         }
-         private void SortArrayThreeNumbersByDescing(int[] myArray)
+         public void SortArrayThreeNumbersByDescing(int[] myArray)
         {
             int operandA = myArray[0];
             int operandB = myArray[1];
